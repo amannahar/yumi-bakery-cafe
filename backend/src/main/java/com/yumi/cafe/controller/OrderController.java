@@ -1,0 +1,2 @@
+package com.yumi.cafe.controller;import com.yumi.cafe.dto.*;import com.yumi.cafe.service.OrderService;import jakarta.validation.Valid;import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/orders") public class OrderController{private final OrderService s;public OrderController(OrderService s){this.s=s;}@PostMapping public OrderResponse create(@Valid @RequestBody OrderRequest r){return s.create(r);}}

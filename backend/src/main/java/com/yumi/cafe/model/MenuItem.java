@@ -1,0 +1,5 @@
+package com.yumi.cafe.model;
+import jakarta.persistence.*;import java.math.BigDecimal;
+@Entity @Table(name="menu_items",indexes=@Index(name="idx_menu_category",columnList="category"))
+public class MenuItem { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) Long id; @Column(nullable=false) String category; @Column(nullable=false) String name; @Column(nullable=false,precision=10,scale=2) BigDecimal price; @Column(precision=10,scale=2) BigDecimal mediumPrice; @Column(nullable=false) boolean active;
+ public MenuItem(){} public MenuItem(String c,String n,BigDecimal p,BigDecimal m,boolean a){category=c;name=n;price=p;mediumPrice=m;active=a;} public Long getId(){return id;} public String getCategory(){return category;} public String getName(){return name;} public BigDecimal getPrice(){return price;} public BigDecimal getMediumPrice(){return mediumPrice;} public boolean isActive(){return active;} public void setCategory(String v){category=v;} public void setName(String v){name=v;} public void setPrice(BigDecimal v){price=v;} public void setMediumPrice(BigDecimal v){mediumPrice=v;} public void setActive(boolean v){active=v;}}

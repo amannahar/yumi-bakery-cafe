@@ -1,0 +1,1 @@
+package com.yumi.cafe.dto;import java.math.BigDecimal;import java.util.*; public record OrderResponse(String orderNumber,BigDecimal subtotal,BigDecimal tax,BigDecimal deliveryFee,BigDecimal total,String status,String paymentStatus,List<Item> items){public record Item(String name,String size,int quantity,BigDecimal unitPrice,BigDecimal lineTotal){}}

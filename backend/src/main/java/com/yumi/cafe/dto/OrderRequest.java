@@ -1,0 +1,2 @@
+package com.yumi.cafe.dto; import jakarta.validation.Valid;import jakarta.validation.constraints.*;import java.util.*;
+public record OrderRequest(@NotBlank String customerName,@Pattern(regexp="[6-9]\\d{9}") String phone,@NotBlank String fulfillmentType,String address,@NotBlank String paymentMethod,@NotEmpty List<@Valid Item> items){public record Item(@NotNull Long menuItemId,@Min(1) int quantity,String size){}}
